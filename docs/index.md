@@ -1,6 +1,6 @@
 
 
-![](img/Lumos.png)
+<img src="img/Lumos.png"/>
 
 # 欢迎来到Lumos的文档
 
