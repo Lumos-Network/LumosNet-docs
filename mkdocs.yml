@@ -1,5 +1,5 @@
 site_name: Lumos文档
-pages:
+nav:
 - 简介: index.md
 - 安装:
 - 快速入门:
