@@ -1,0 +1,27 @@
+环境设置
+========================================
+
+我们需要为Lumos进行环境配置，Lumos默认安装于用户目录下，请在~/.bashrc文件中添加如下内容
+
+.. code-block:: console
+    :linenos:
+
+    export PATH=/home/用户名/lumos/include/:$PATH
+    export PATH=/home/用户名/lumos/bin:$PATH
+    export LD_LIBRARY_PATH=/home/用户名/lumos/lib:$LD_LIBRARY_PATH
+
+添加完成后使用如下命令激活
+
+.. code-block:: console
+    :linenos:
+
+    $ source ~/.bashrc
+
+并使用
+
+.. code-block:: console
+    :linenos:
+
+    $ lumos --version
+
+验证lumos框架是否安装成功

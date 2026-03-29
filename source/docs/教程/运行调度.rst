@@ -1,0 +1,74 @@
+运行调度
+=================================
+
+当前您完成了一个静态模型的构建，模型本身无法运行，我们需要借助一个Session会话来完成计算，首先需要创建一个会话实例
+
+.. code-block:: c
+    :linenos:
+
+    Session *sess = create_session(g, 1, 2, 1, 2, type, path);
+
+create_session接口定义如下
+
+.. code-block:: c
+    :linenos:
+
+    Session *create_session(Graph *graph, int h, int w, int c, int truth_num, char *type, char *path)
+
+接口参数说明如下
+
+==========    =====================
+graph         计算图
+h             输入图像数据的height
+w             输入图像数据的width
+c             输入图像数据的channel
+truth_num     离散标签数据个数
+type          运行内核选择CPU/GPU
+path          权重文件路径
+==========    =====================
+
+Lumos允许您在预训练模型基础上完成训练，path参数即预训练权重文件路径，如果您需要从零开始训练，path参数设置为NULL
+
+您需要通过会话配置训练超参数
+
+.. code-block:: c
+    :linenos:
+
+    set_train_params(sess, 50, 2, 2, 0.1);
+
+set_train_params接口定义如下
+
+.. code-block:: c
+    :linenos:
+
+    void set_train_params(Session *sess, int epoch, int batch, int subdivision, float learning_rate)
+
+接口参数说明如下
+
+==============    =====================
+sess              会话实例
+epoch             训练轮次
+batch             随机梯度下降批次大小
+subdivision       批次分割大小
+learning_rate     步长（学习率）
+==============    =====================
+
+在图像识别算法中，内存需求非常大，您可能没有符合运行要求的内存空间，subdivision参数设置子批次计算大小，可以实现多个小批次计算来完成完整batch运算，有限的解决内存问题，batch值必须能被subdivision整除
+
+现在您需要调度会话，完成运行前的初始化
+
+.. code-block:: c
+    :linenos:
+
+    init_session(sess, "./data/xor/data.txt", "./data/xor/label.txt");
+
+在这里您需要提供训练数据和标签数据的路径文件，详细数据格式可参考[数据处理]()
+
+完成上述过程后，您就可以开始训练了
+
+.. code-block:: c
+    :linenos:
+
+    train(sess);
+
+训练完成后，权重文件将保存于运行路径目录下，文件名为LuWeights

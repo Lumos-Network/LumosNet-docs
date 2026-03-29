@@ -1,0 +1,14 @@
+模型构建
+=================================
+
+- create_graph：Graph *create_graph()
+
+​	创建计算图实例
+
+- append_layer2grpah：void append_layer2grpah(Graph **graph*, Layer **l*)	
+
+
+==========    =====================
+graph         计算图实例
+l             要添加的计算层实例
+==========    =====================

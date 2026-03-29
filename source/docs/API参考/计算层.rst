@@ -1,0 +1,65 @@
+计算层
+=================================
+
+- make_avgpool_layer：Layer *make_avgpool_layer(int *ksize*, int *stride*, int *pad*)
+
+​	均值池化
+
+==========    =====================
+ksize         池化核大小
+stride        步长
+pad           填充大小
+==========    =====================
+
+- make_connect_layer：Layer *make_connect_layer(int *output*, int *bias*, char **active*)
+
+​	直连层
+
+==========    ==============================
+output        直连层输出大小
+bias          是否进行添加bias（0:no，1:yes）
+active        激活函数
+==========    ==============================
+
+- make_convolutional_layer：Layer *make_convolutional_layer(int *filters*, int *ksize*, int *stride*, int *pad*, int *bias*, char **active*)
+
+​	卷积层
+
+==========    ==============================
+filters       卷积核数量
+ksize         卷积核大小
+stride        卷积步长
+pad           填充大小
+bias          是否进行添加bias（0:no，1:yes）
+active        激活函数
+==========    ==============================
+
+- make_im2col_layer：Layer *make_im2col_layer()
+
+​	将多维数据转化为线性一维数据
+
+- make_maxpool_layer：Layer *make_maxpool_layer(int *ksize*, int *stride*, int *pad*)
+
+​	最大值池化
+
+==========    =====================
+ksize         池化核大小
+stride        池化步长
+pad           填充大小
+==========    =====================
+
+- make_softmax_layer：Layer *make_softmax_layer(int *group*)
+
+​	softmax层
+
+==========    =====================
+group         类型数量 
+==========    =====================
+
+- make_mse_layer：Layer *make_mse_layer(int *group*)
+
+​	mse损失层
+
+==========    =====================
+group         类型数量 
+==========    =====================

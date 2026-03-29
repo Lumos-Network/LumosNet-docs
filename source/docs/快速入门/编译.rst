@@ -1,0 +1,11 @@
+编译
+=================================
+
+上述过程我们完成了模型代码，现在我们需要编译我们的代码，我们推荐您使用gcc编译器，因为Lumos框架在Linux下开发并发布，全面依赖gcc编译器特性
+
+如下我们提供了一个编译命令的参考实例，如果您对make工具和gcc较为熟悉，请您自行编写编译脚本
+
+.. code-block:: console
+    :linenos:
+
+    $ gcc -fopenmp lumos.c -I/home/用户名/lumos/include/ -o lumos -L/home/用户名/lumos/lib -llumos

@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Lumos'
-copyright = '2026, 李卞'
+copyright = '2023, 李卞'
 author = '李卞'
 release = 'v1.0'
 

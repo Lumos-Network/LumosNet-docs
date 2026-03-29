@@ -1,1 +1,1 @@
-# Lumos-docs
+# docs

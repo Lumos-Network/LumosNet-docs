@@ -1,0 +1,32 @@
+数据处理
+=================================
+
+目前Lumos只能读取PNG格式数据，未来我们会基于不同的场景扩展支持的数据格式
+
+我们需要您将数据组织为Lumos需要的形式，数据分为数据本身和训练标签，我们分别用data和label表示
+
+每一个数据对应一个标签，都是独立文件，您可以将它们存放在同一个目录下也可以不这样做，我们需要您将所有数据和标签文件的绝对路径分别写入文本文件中，Lumos通过读取这个文本文件来获取数据
+
+如下所示
+
+train_data.txt:
+
+.. code-block:: console
+    :linenos:
+
+    /home/lumos/data/mnist/train/9_11.png
+    /home/lumos/data/mnist/train/7_10.png
+    /home/lumos/data/mnist/train/2_106.png
+    /home/lumos/data/mnist/train/6_86.png
+
+train_label.txt
+
+.. code-block:: console
+    :linenos:
+
+    /home/lumos/data/mnist/train/9_11.txt
+    /home/lumos/data/mnist/train/7_10.txt
+    /home/lumos/data/mnist/train/2_106.txt
+    /home/lumos/data/mnist/train/6_86.txt
+
+您可以看到，数据和标签路径是一一对应的，Lumos只会顺序读取而不做任何判断，您需要确保路径写入的顺序
