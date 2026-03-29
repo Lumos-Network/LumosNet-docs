@@ -1,0 +1,14 @@
+site_name: Lumos文档
+pages:
+- 简介: index.md
+- 安装:
+- 快速入门:
+- API参考:
+- 经典案例:
+- 深度学习:
+- 版本:
+- 其他:
+
+theme: readthedocs
+
+extra_javascript: ['https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML','js/mathjaxhelper.js']
