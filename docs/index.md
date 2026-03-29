@@ -1,4 +1,6 @@
-![](img/Lumos.png)
+
+
+![](./img/Lumos.png)
 
 # 欢迎来到Lumos的文档
 
