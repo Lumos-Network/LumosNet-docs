@@ -1,8 +1,0 @@
-依赖
-========================================
-
-Lumos使用C语言开发，并且依赖于CUDA框架实现GPU加速，所以您需要独立安装编译环境和CUDA
-
-您需要安装gcc/g++编译器以及make工具，您可以参考其官方文档
-
-我们还依赖于CUDA Toolkit进行GPU加速，您需要提前安装CUDA，详细安装方法请参考 `NVIDIA CUDA官方文档 <https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html>`_
