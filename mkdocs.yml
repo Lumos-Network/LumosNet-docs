@@ -1,8 +1,8 @@
 site_name: Lumos文档
 nav:
   - 简介: index.md
-  - 安装: index.md
-  - 快速入门: index.md
+  - 安装: 安装/index.md
+  - 快速入门: 快速入门/index.md
   - API参考: index.md
   - 经典案例: index.md
   - 深度学习: index.md
