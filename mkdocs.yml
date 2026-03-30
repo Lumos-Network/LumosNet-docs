@@ -8,6 +8,7 @@ nav:
     - 模型构建: API参考/模型构建.md
     - 其他: API参考/其他.md
   - 经典案例:
+    - 经典案例/xor.md
   - 深度学习:
     - 深度学习/全连接神经网络.md
     - 深度学习/卷积.md
@@ -19,7 +20,9 @@ nav:
     - 深度学习/参数优化器.md
     - 深度学习/dropout.md
   - 版本:
+    - 版本/v1.md
   - 其他:
+    - 其他/index.md
 
 theme: readthedocs
 
