@@ -1,3 +1,5 @@
+<img src="../img/Lumos.png"/>
+
 # API参考
 
 API参考提供详细的API说明，这对您熟练使用Lumos提供帮助

@@ -1,3 +1,5 @@
+<img src="../img/Lumos.png"/>
+
 # 快速入门
 
 Lumos允许您快速实现深度学习模型，我们提供了简洁的接口，您可以在lumos/include目录下的lumos.h文件中查看我们提供的接口

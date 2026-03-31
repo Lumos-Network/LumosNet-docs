@@ -1,3 +1,5 @@
+<img src="../img/Lumos.png"/>
+
 # Dropout
 
 2012年Hinton在论文《Improving neural networks by preventing co-adaptation of feature detectors》中提出Dropout，用于解决过拟合问题。

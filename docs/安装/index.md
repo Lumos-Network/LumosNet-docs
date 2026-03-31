@@ -1,3 +1,5 @@
+<img src="../img/Lumos.png"/>
+
 # Lumos安装
 
 首先您需要从Lumos开源仓库将代码复制到您的设备上，您可以直接下载压缩包，也可使用git工具
