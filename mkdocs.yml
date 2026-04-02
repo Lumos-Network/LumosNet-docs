@@ -12,6 +12,7 @@ nav:
     - 经典案例/lenet5.md
     - 经典案例/alexnet.md
     - 经典案例/vgg16.md
+    - 经典案例/resnet18.md
   - 深度学习:
     - 深度学习/全连接神经网络.md
     - 深度学习/卷积.md
