@@ -98,7 +98,7 @@ Layer *l32 = make_shortcut_layer(l30, 0, "relu");
 
 Layer *l33 = make_avgpool_layer(7, 1, 0);
 Layer *l34 = make_connect_layer(5, 1, "linear");
-Layer *l35 = make_crossentropy_layer(5);
+Layer *l35 = make_crossentropy_layer(NULL, -1);
 ```
 
 我们使用crossentropy分类器进行分类
@@ -106,27 +106,27 @@ Layer *l35 = make_crossentropy_layer(5);
 接下来指定各计算层的参数初始化
 
 ```c
-init_kaiming_uniform_kernel(l1, sqrt(5.0), "fan_in", "leaky_relu");
-init_kaiming_uniform_kernel(l3, sqrt(5.0), "fan_in", "leaky_relu");
-init_kaiming_uniform_kernel(l4, sqrt(5.0), "fan_in", "leaky_relu");
-init_kaiming_uniform_kernel(l6, sqrt(5.0), "fan_in", "leaky_relu");
-init_kaiming_uniform_kernel(l7, sqrt(5.0), "fan_in", "leaky_relu");
-init_kaiming_uniform_kernel(l9, sqrt(5.0), "fan_in", "leaky_relu");
-init_kaiming_uniform_kernel(l10, sqrt(5.0), "fan_in", "leaky_relu");
-init_kaiming_uniform_kernel(l12, sqrt(5.0), "fan_in", "leaky_relu");
-init_kaiming_uniform_kernel(l14, sqrt(5.0), "fan_in", "leaky_relu");
-init_kaiming_uniform_kernel(l15, sqrt(5.0), "fan_in", "leaky_relu");
-init_kaiming_uniform_kernel(l17, sqrt(5.0), "fan_in", "leaky_relu");
-init_kaiming_uniform_kernel(l18, sqrt(5.0), "fan_in", "leaky_relu");
-init_kaiming_uniform_kernel(l20, sqrt(5.0), "fan_in", "leaky_relu");
-init_kaiming_uniform_kernel(l22, sqrt(5.0), "fan_in", "leaky_relu");
-init_kaiming_uniform_kernel(l23, sqrt(5.0), "fan_in", "leaky_relu");
-init_kaiming_uniform_kernel(l25, sqrt(5.0), "fan_in", "leaky_relu");
-init_kaiming_uniform_kernel(l26, sqrt(5.0), "fan_in", "leaky_relu");
-init_kaiming_uniform_kernel(l28, sqrt(5.0), "fan_in", "leaky_relu");
-init_kaiming_uniform_kernel(l30, sqrt(5.0), "fan_in", "leaky_relu");
-init_kaiming_uniform_kernel(l31, sqrt(5.0), "fan_in", "leaky_relu");
-init_kaiming_uniform_kernel(l34, sqrt(5.0), "fan_in", "leaky_relu");
+init_kaiming_uniform_kernel(l1, sqrt(5.0), "fan_in", "leaky");
+init_kaiming_uniform_kernel(l3, sqrt(5.0), "fan_in", "leaky");
+init_kaiming_uniform_kernel(l4, sqrt(5.0), "fan_in", "leaky");
+init_kaiming_uniform_kernel(l6, sqrt(5.0), "fan_in", "leaky");
+init_kaiming_uniform_kernel(l7, sqrt(5.0), "fan_in", "leaky");
+init_kaiming_uniform_kernel(l9, sqrt(5.0), "fan_in", "leaky");
+init_kaiming_uniform_kernel(l10, sqrt(5.0), "fan_in", "leaky");
+init_kaiming_uniform_kernel(l12, sqrt(5.0), "fan_in", "leaky");
+init_kaiming_uniform_kernel(l14, sqrt(5.0), "fan_in", "leaky");
+init_kaiming_uniform_kernel(l15, sqrt(5.0), "fan_in", "leaky");
+init_kaiming_uniform_kernel(l17, sqrt(5.0), "fan_in", "leaky");
+init_kaiming_uniform_kernel(l18, sqrt(5.0), "fan_in", "leaky");
+init_kaiming_uniform_kernel(l20, sqrt(5.0), "fan_in", "leaky");
+init_kaiming_uniform_kernel(l22, sqrt(5.0), "fan_in", "leaky");
+init_kaiming_uniform_kernel(l23, sqrt(5.0), "fan_in", "leaky");
+init_kaiming_uniform_kernel(l25, sqrt(5.0), "fan_in", "leaky");
+init_kaiming_uniform_kernel(l26, sqrt(5.0), "fan_in", "leaky");
+init_kaiming_uniform_kernel(l28, sqrt(5.0), "fan_in", "leaky");
+init_kaiming_uniform_kernel(l30, sqrt(5.0), "fan_in", "leaky");
+init_kaiming_uniform_kernel(l31, sqrt(5.0), "fan_in", "leaky");
+init_kaiming_uniform_kernel(l34, sqrt(5.0), "fan_in", "leaky");
 
 init_kaiming_uniform_bias(l34, "fan_in");
 ```
@@ -205,7 +205,7 @@ void resnet18(char *type, char *path)
 
     Layer *l33 = make_avgpool_layer(7, 1, 0);
     Layer *l34 = make_connect_layer(5, 1, "linear");
-    Layer *l35 = make_crossentropy_layer(5);
+    Layer *l35 = make_crossentropy_layer(NULL, -1);
 
     append_layer2grpah(g, l1);
     append_layer2grpah(g, l2);
@@ -243,27 +243,27 @@ void resnet18(char *type, char *path)
     append_layer2grpah(g, l34);
     append_layer2grpah(g, l35);
 
-    init_kaiming_uniform_kernel(l1, sqrt(5.0), "fan_in", "leaky_relu");
-    init_kaiming_uniform_kernel(l3, sqrt(5.0), "fan_in", "leaky_relu");
-    init_kaiming_uniform_kernel(l4, sqrt(5.0), "fan_in", "leaky_relu");
-    init_kaiming_uniform_kernel(l6, sqrt(5.0), "fan_in", "leaky_relu");
-    init_kaiming_uniform_kernel(l7, sqrt(5.0), "fan_in", "leaky_relu");
-    init_kaiming_uniform_kernel(l9, sqrt(5.0), "fan_in", "leaky_relu");
-    init_kaiming_uniform_kernel(l10, sqrt(5.0), "fan_in", "leaky_relu");
-    init_kaiming_uniform_kernel(l12, sqrt(5.0), "fan_in", "leaky_relu");
-    init_kaiming_uniform_kernel(l14, sqrt(5.0), "fan_in", "leaky_relu");
-    init_kaiming_uniform_kernel(l15, sqrt(5.0), "fan_in", "leaky_relu");
-    init_kaiming_uniform_kernel(l17, sqrt(5.0), "fan_in", "leaky_relu");
-    init_kaiming_uniform_kernel(l18, sqrt(5.0), "fan_in", "leaky_relu");
-    init_kaiming_uniform_kernel(l20, sqrt(5.0), "fan_in", "leaky_relu");
-    init_kaiming_uniform_kernel(l22, sqrt(5.0), "fan_in", "leaky_relu");
-    init_kaiming_uniform_kernel(l23, sqrt(5.0), "fan_in", "leaky_relu");
-    init_kaiming_uniform_kernel(l25, sqrt(5.0), "fan_in", "leaky_relu");
-    init_kaiming_uniform_kernel(l26, sqrt(5.0), "fan_in", "leaky_relu");
-    init_kaiming_uniform_kernel(l28, sqrt(5.0), "fan_in", "leaky_relu");
-    init_kaiming_uniform_kernel(l30, sqrt(5.0), "fan_in", "leaky_relu");
-    init_kaiming_uniform_kernel(l31, sqrt(5.0), "fan_in", "leaky_relu");
-    init_kaiming_uniform_kernel(l34, sqrt(5.0), "fan_in", "leaky_relu");
+    init_kaiming_uniform_kernel(l1, sqrt(5.0), "fan_in", "leaky");
+    init_kaiming_uniform_kernel(l3, sqrt(5.0), "fan_in", "leaky");
+    init_kaiming_uniform_kernel(l4, sqrt(5.0), "fan_in", "leaky");
+    init_kaiming_uniform_kernel(l6, sqrt(5.0), "fan_in", "leaky");
+    init_kaiming_uniform_kernel(l7, sqrt(5.0), "fan_in", "leaky");
+    init_kaiming_uniform_kernel(l9, sqrt(5.0), "fan_in", "leaky");
+    init_kaiming_uniform_kernel(l10, sqrt(5.0), "fan_in", "leaky");
+    init_kaiming_uniform_kernel(l12, sqrt(5.0), "fan_in", "leaky");
+    init_kaiming_uniform_kernel(l14, sqrt(5.0), "fan_in", "leaky");
+    init_kaiming_uniform_kernel(l15, sqrt(5.0), "fan_in", "leaky");
+    init_kaiming_uniform_kernel(l17, sqrt(5.0), "fan_in", "leaky");
+    init_kaiming_uniform_kernel(l18, sqrt(5.0), "fan_in", "leaky");
+    init_kaiming_uniform_kernel(l20, sqrt(5.0), "fan_in", "leaky");
+    init_kaiming_uniform_kernel(l22, sqrt(5.0), "fan_in", "leaky");
+    init_kaiming_uniform_kernel(l23, sqrt(5.0), "fan_in", "leaky");
+    init_kaiming_uniform_kernel(l25, sqrt(5.0), "fan_in", "leaky");
+    init_kaiming_uniform_kernel(l26, sqrt(5.0), "fan_in", "leaky");
+    init_kaiming_uniform_kernel(l28, sqrt(5.0), "fan_in", "leaky");
+    init_kaiming_uniform_kernel(l30, sqrt(5.0), "fan_in", "leaky");
+    init_kaiming_uniform_kernel(l31, sqrt(5.0), "fan_in", "leaky");
+    init_kaiming_uniform_kernel(l34, sqrt(5.0), "fan_in", "leaky");
 
     init_kaiming_uniform_bias(l34, "fan_in");
 
@@ -330,7 +330,7 @@ void resnet18_detect(char*type, char *path)
 
     Layer *l33 = make_avgpool_layer(7, 1, 0);
     Layer *l34 = make_connect_layer(5, 1, "linear");
-    Layer *l35 = make_crossentropy_layer(5);
+    Layer *l35 = make_crossentropy_layer(NULL, -1);
 
     append_layer2grpah(g, l1);
     append_layer2grpah(g, l2);

@@ -37,7 +37,7 @@ Layer *l4 = make_maxpool_layer(2, 2, 0);
 Layer *l5 = make_convolutional_layer(120, 5, 1, 0, 1, "relu");
 Layer *l6 = make_connect_layer(84, 1, "relu");
 Layer *l7 = make_connect_layer(10, 1, "linear");
-Layer *l8 = make_crossentropy_layer(10);
+Layer *l8 = make_crossentropy_layer(NULL, -1);
 ```
 
 我们使用crossentropy分类器进行分类
@@ -68,7 +68,7 @@ void lenet5_mnist(char *type, char *path)
     Layer *l5 = make_convolutional_layer(120, 5, 1, 0, 1, "relu");
     Layer *l6 = make_connect_layer(84, 1, "relu");
     Layer *l7 = make_connect_layer(10, 1, "linear");
-    Layer *l8 = make_crossentropy_layer(10);
+    Layer *l8 = make_crossentropy_layer(NULL, -1);
     append_layer2grpah(g, l1);
     append_layer2grpah(g, l2);
     append_layer2grpah(g, l3);
@@ -94,7 +94,7 @@ void lenet5_mnist_detect(char*type, char *path)
     Layer *l5 = make_convolutional_layer(120, 5, 1, 0, 1, "relu");
     Layer *l6 = make_connect_layer(84, 1, "relu");
     Layer *l7 = make_connect_layer(10, 1, "linear");
-    Layer *l8 = make_crossentropy_layer(10);
+    Layer *l8 = make_crossentropy_layer(NULL, -1);
     append_layer2grpah(g, l1);
     append_layer2grpah(g, l2);
     append_layer2grpah(g, l3);

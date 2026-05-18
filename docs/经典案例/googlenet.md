@@ -315,7 +315,7 @@ inception5b[3] = ls[107];
 ls[108] = make_avgpool_layer(7, 7, 0); // 106
 ls[109] = make_dropout_layer(0.5);
 ls[110] = make_connect_layer(100, 1, "linear");
-ls[111] = make_crossentropy_layer(100);
+ls[111] = make_crossentropy_layer(NULL, -1);
 ```
 
 我们使用crossentropy分类器进行分类
@@ -558,7 +558,7 @@ void googlenet(char *type, char *path)
     ls[108] = make_avgpool_layer(7, 7, 0); // 106
     ls[109] = make_dropout_layer(0.5);
     ls[110] = make_connect_layer(100, 1, "linear");
-    ls[111] = make_crossentropy_layer(100);
+    ls[111] = make_crossentropy_layer(NULL, -1);
 
     for (int i = 0; i < 112; ++i) {
         append_layer2grpah(graph, ls[i]);
@@ -800,7 +800,7 @@ void googlenet_detect(char*type, char *path)
     ls[108] = make_avgpool_layer(7, 7, 0); // 106
     ls[109] = make_dropout_layer(0.5);
     ls[110] = make_connect_layer(100, 1, "linear");
-    ls[111] = make_crossentropy_layer(100);
+    ls[111] = make_crossentropy_layer(NULL, -1);
 
     for (int i = 0; i < 112; ++i) {
         append_layer2grpah(graph, ls[i]);

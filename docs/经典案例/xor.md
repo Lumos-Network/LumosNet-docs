@@ -62,7 +62,7 @@ Graph *g = create_graph();
 Layer *l1 = make_connect_layer(8, 1, "relu");
 Layer *l2 = make_connect_layer(16, 1, "relu");
 Layer *l3 = make_connect_layer(2, 1, "linear");
-Layer *l4 = make_crossentropy_layer(2);
+Layer *l4 = make_crossentropy_layer(NULL, -1);
 ```
 
 我们使用crossentropy分类器进行分类
@@ -71,7 +71,7 @@ Layer *l4 = make_crossentropy_layer(2);
 
 ```c
 Session *sess = create_session(g, 1, 2, 1, 2, type, path);
-set_train_params(sess, 50, 4, 4, 0.1);
+set_train_params(sess, 150, 4, 4, 0.1);
 SGDOptimizer_sess(sess, 0.9, 0, 0, 0, 0);
 init_session(sess, "./demo/xor/data.txt", "./demo/xor/label.txt");
 ```
@@ -89,13 +89,13 @@ void xor(char *type, char *path)
     Layer *l1 = make_connect_layer(8, 1, "relu");
     Layer *l2 = make_connect_layer(16, 1, "relu");
     Layer *l3 = make_connect_layer(2, 1, "linear");
-    Layer *l4 = make_crossentropy_layer(2);
+    Layer *l4 = make_crossentropy_layer(NULL, -1);
     append_layer2grpah(g, l1);
     append_layer2grpah(g, l2);
     append_layer2grpah(g, l3);
     append_layer2grpah(g, l4);
     Session *sess = create_session(g, 1, 2, 1, 2, type, path);
-    set_train_params(sess, 50, 4, 4, 0.1);
+    set_train_params(sess, 150, 4, 4, 0.1);
     SGDOptimizer_sess(sess, 0.9, 0, 0, 0, 0);
     init_session(sess, "./demo/xor/data.txt", "./demo/xor/label.txt");
     train(sess);
@@ -107,7 +107,7 @@ void xor_detect(char *type, char *path)
     Layer *l1 = make_connect_layer(8, 1, "relu");
     Layer *l2 = make_connect_layer(16, 1, "relu");
     Layer *l3 = make_connect_layer(2, 1, "linear");
-    Layer *l4 = make_crossentropy_layer(2);
+    Layer *l4 = make_crossentropy_layer(NULL, -1);
     append_layer2grpah(g, l1);
     append_layer2grpah(g, l2);
     append_layer2grpah(g, l3);
@@ -127,4 +127,4 @@ void xor_detect(char *type, char *path)
 
 <img src="../img/xor_loss.png"/>
 
-该网络在经过50个epoch训练后，可以准确的对XOR数据进行分类，分类精度100%
+该网络在经过150个epoch训练后，可以准确的对XOR数据进行分类，分类精度100%
