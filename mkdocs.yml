@@ -15,6 +15,7 @@ nav:
     - 经典案例/googlenet.md
     - 经典案例/resnet18.md
     - 经典案例/fcn8s.md
+    - 经典案例/unet.md
   - 深度学习:
     - 深度学习/全连接神经网络.md
     - 深度学习/卷积.md
